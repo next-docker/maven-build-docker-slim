@@ -13,3 +13,6 @@ RUN mkdir -p /opt/health;mkdir -p /opt/ci
 ADD healthcheck.sh /opt/health/healthcheck.sh
 ADD settings.xml /opt/ci/settings.xml
 RUN chmod 755 /opt/health/healthcheck.sh
+ENV MVN_SETTINGS_XML "/opt/ci/settings.xml"
+ENV HEALTH_CHECK_SCRIPT "/opt/health/healthcheck.sh"
+

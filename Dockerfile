@@ -1,4 +1,5 @@
-FROM  maven:3-jdk-8-slim
+FROM  maven:3.6.3-jdk-11-openj9
+#FROM  maven:3-jdk-8-slim
 
 MAINTAINER Ravi Sharma
 

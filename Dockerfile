@@ -1,11 +1,10 @@
-FROM  maven:3.6.3-jdk-11-openj9
+FROM  maven:3.6.3-jdk-14
+#FROM  maven:3.6.3-jdk-11-openj9
 #FROM  maven:3-jdk-8-slim
 
 MAINTAINER Ravi Sharma
 
-#Install Maven
-
-ENV MAVEN_VERSION 3.6.1
+ENV MAVEN_VERSION 3.6.3
 
 RUN echo $JAVA_HOME
 RUN apt-get update -y

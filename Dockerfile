@@ -1,4 +1,4 @@
-FROM openjdk:15-jdk-slim
+FROM openjdk:14-jdk-slim
 
 MAINTAINER Ravi Sharma
 

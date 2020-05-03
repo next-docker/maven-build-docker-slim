@@ -26,7 +26,7 @@ function waitContainer {
   let "successCount=1"
   while STATUS=$(getContainerHealth $1); [ $STATUS != "\"healthy\"" ]; do
     if [ $STATUS != "\"healthy\"" ]; then
-        echo "$var STATUS=$STATUS" $1
+        echo -ne "$var STATUS=$STATUS" $1 \\r
 #        printf .
 #        lf=$'\n'
         sleep $RETRY_INTERVAL
@@ -41,7 +41,7 @@ function waitContainer {
   done
   while STATUS=$(getContainerHealth $1); [ $STATUS = "\"healthy\"" ]; do
 
-   echo "$var STATUS=$STATUS" $1 $successCount $MIN_SUCCESS_COUNT
+   echo -ne "$var STATUS=$STATUS" $1 $successCount $MIN_SUCCESS_COUNT \\r
    if [ "$successCount" -ge $MIN_SUCCESS_COUNT ]; then
          break;
    fi
@@ -55,3 +55,4 @@ function waitContainer {
   printf "$lf"
 }
 waitContainer $CONTAINER_NAME
+

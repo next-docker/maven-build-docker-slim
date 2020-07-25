@@ -19,5 +19,16 @@
                 </httpHeaders>
             </configuration>
         </server>
+        <server>
+            <id>gitlab-maven-personal</id>
+            <configuration>
+                <httpHeaders>
+                    <property>
+                        <name>Job-Token</name>
+                        <value>${env.CI_JOB_TOKEN}</value>
+                    </property>
+                </httpHeaders>
+            </configuration>
+        </server>
     </servers>
 </settings>

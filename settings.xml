@@ -8,5 +8,16 @@
             <username>${env.REPO_USER_NAME}</username>
             <password>${env.REPO_PASSWORD}</password>
         </server>
+        <server>
+            <id>gitlab-maven</id>
+            <configuration>
+                <httpHeaders>
+                    <property>
+                        <name>Job-Token</name>
+                        <value>${env.CI_JOB_TOKEN}</value>
+                    </property>
+                </httpHeaders>
+            </configuration>
+        </server>
     </servers>
 </settings>
